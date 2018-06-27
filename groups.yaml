@@ -1,0 +1,58 @@
+### Groups ###
+# Views
+default_view:
+  view: yes
+  name: Home
+#  icon: mdi:home
+  entities:
+    - group.sebastian_office
+    - group.living_room
+    - group.garage
+    - group.outside
+
+HA:
+  view: yes
+#  icon: mdi:home-assistant
+  entities:
+    - group.ha_version_info
+
+# Room Groups
+living_room:
+  name: Living Room
+  control: hidden
+  entities:
+    - light.tvled
+    - media_player.unnamed_room
+    - media_player.lounge
+
+sebastian_office:
+  name: Sebastian's Office
+  control: hidden
+  entities:
+    - light.studyled
+    - switch.fluxer
+    - sensor.office
+
+Garage:
+  name: Garage
+  control: hidden
+  entities:
+    - sensor.garage
+
+outside:
+  name: Outside
+  control: hidden
+  entities:
+    - sensor.bom_adelaide_cbd_air_temp_c
+    - sun.sun
+    - sensor.moon
+
+####################################################
+#                   SENSORS                        #
+####################################################
+
+ha_version_info:
+ name: HA Info
+ entities:
+    - sensor.installed_version
+    - sensor.latest_version

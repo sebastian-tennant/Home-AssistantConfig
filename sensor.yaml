@@ -1,0 +1,48 @@
+ - platform: bom
+   station: IDS60901.94648
+   name: Adelaide (CBD)
+   monitored_conditions:
+      - air_temp
+
+ - platform: snmp
+   name: 'Office'  
+   host: 10.4.20.34
+   baseoid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.8.116.101.109.112.45.116.120.116.1
+   accept_errors: true
+   unit_of_measurement: '°C'
+
+ - platform: snmp
+   name: 'Garage'
+   host: 10.4.20.35
+   baseoid: 1.3.6.1.4.1.8072.1.3.2.4.1.2.8.116.101.109.112.45.116.120.116.1  
+   accept_errors: true
+   unit_of_measurement: '°C'
+
+ - platform: nut
+   name: UPS
+   host: 10.4.20.10
+   username: monuser
+   password: secret
+   resources:
+      - ups.load
+      - ups.realpower.nominal
+      - input.voltage
+      - battery.runtime
+
+####################################################
+#                                                  #
+#                HA VERSION INFO                   #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/sensor.command_line/
+ - platform: command_line
+   name: Installed version
+   command: "head -5 /home/homeassistant/.homeassistant/.HA_VERSION"
+
+#https://www.home-assistant.io/components/sensor.rest/
+ - platform: rest
+   resource: https://pypi.python.org/pypi/homeassistant/json
+   name: Latest Version
+   value_template: "{{ value_json.info.version }}"
+   scan_interval: 3600

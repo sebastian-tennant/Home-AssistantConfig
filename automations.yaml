@@ -1,0 +1,12 @@
+################################################################################
+- id: notification_update
+  alias: 'Notification - Update Available'
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'An update for Home Assistant is available.'
+################################################################################

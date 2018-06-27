@@ -1,0 +1,25 @@
+media_player.unnamed_room:
+  config_entry_id:
+  name: living_room_sonos
+  platform: sonos
+  unique_id: RINCON_949F3E8E743201400
+media_player.lounge:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: 2af92eae-0022-e57a-85df-9510769400f1
+media_player.master_bedroom_tv:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: aea08e25-1926-ae6c-c11e-5370da37ed27
+sensor.sebiphone_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_Seb-iphone8
+sensor.sebiphone_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_Seb-iphone8

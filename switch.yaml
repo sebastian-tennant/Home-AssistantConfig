@@ -1,0 +1,18 @@
+  - platform: flux
+    lights:
+    - light.studyled
+    name: Fluxer
+    start_time: '7:00'
+    stop_time: '1:00'
+    start_colortemp: 6000
+    sunset_colortemp: 3000
+    stop_colortemp: 1900
+    brightness: 5
+    disable_brightness_adjust: True
+    mode: rgb
+
+#  - platform: broadlink
+#    host: 192.168.2.133
+#    mac: '34:ea:34:8a:38:55'
+#    timeout: 15
+#    switches:
