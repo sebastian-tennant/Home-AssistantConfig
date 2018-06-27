@@ -1,5 +1,11 @@
-### Groups ###
-# Views
+#https://home-assistant.io/components/group
+
+####################################################
+#                                                  #
+#                     VIEWS                        #
+#                                                  #
+####################################################
+
 default_view:
   view: yes
   name: Home
@@ -16,7 +22,12 @@ HA:
   entities:
     - group.ha_version_info
 
-# Room Groups
+####################################################
+#                                                  #
+#                    GROUPS                        #
+#                                                  #
+####################################################
+
 living_room:
   name: Living Room
   control: hidden
@@ -33,7 +44,7 @@ sebastian_office:
     - switch.fluxer
     - sensor.office
 
-Garage:
+garage:
   name: Garage
   control: hidden
   entities:

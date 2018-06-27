@@ -1,17 +1,18 @@
+####################################################
+#                                                  #
+#                 HOME ASSISTANT                   #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/docs/configuration/basic/
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: !secret name
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret latitude
   longitude: !secret longitude 
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
-  # metric for Metric, imperial for Imperial
+  elevation: 23
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: !secret time_zone
-  # Customisation via UI
-  customize: !include customize.yaml
+  customize: !include_dir_merge_named customize/
 
 # Show links to resources in log and frontend
 #introduction:
@@ -69,13 +70,13 @@ tts:
   - platform: google
 
 group: !include groups.yaml
-automation: !include automations.yaml
 script: !include scripts.yaml
 light: !include light.yaml
 sensor: !include sensor.yaml
 #device_tracker: !include device_tracker.yaml
 media_player: !include media_player.yaml
 switch: !include switch.yaml
+automation: !include_dir_merge_list automation/
 
 #Enable iOS component
 ios:

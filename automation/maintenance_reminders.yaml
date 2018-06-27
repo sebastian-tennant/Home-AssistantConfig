@@ -1,0 +1,49 @@
+#########################################################
+#                                                       #
+#                 BIN DAY REMINDER                      #
+#                                                       #
+#########################################################
+
+  - alias: Bin Day Reminder
+    trigger:
+      platform: time
+      at: '19:00:00'
+    condition:
+      condition: time
+      weekday:
+        - tue
+    action:
+      service: script.sonos_say
+      data:
+        sonos_entity: media_player.unnamed_room
+        volume: 0.5
+        message: 'Time to take out the bins!'
+        delay: '00:00:05'
+
+#########################################################
+#                                                       #
+#                FEED CAT REMINDER                      #
+#                                                       #
+#########################################################
+
+  - alias: Feed the cat Reminder
+    trigger:
+      platform: time
+      at: '17:00:00'
+    condition:
+      condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+    action:
+      service: script.sonos_say 
+      data:
+        sonos_entity: media_player.unnamed_room
+        volume: 0.5
+        message: 'Time to feed the cat'
+        delay: '00:00:05' 

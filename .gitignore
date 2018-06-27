@@ -1,4 +1,16 @@
-*
+.HA_VERSION
+.cloud/production_auth.json
+.config_entries.json
+.gitignore
+.ios.conf
+.uuid
+README.md
+home-assistant.log
+home-assistant_v2.db
+certs/
+static/
+deps/
+tts/
 !*.yaml
 !scenes
 !.gitignore

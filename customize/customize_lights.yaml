@@ -1,0 +1,14 @@
+#https://home-assistant.io/docs/configuration/customizing-devices/
+
+####################################################
+#                                                  #
+#                    LIGHTS                        #
+#                                                  #
+####################################################
+
+
+light.yeelight_strip_34ce0087dd75:
+   friendly_name: Sebastian's YeeLED Strip
+
+light.yeelight_strip_34ce0087ea84:
+   friendly_name: TV YeeLED Strip
