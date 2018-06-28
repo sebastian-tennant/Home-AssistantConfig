@@ -1,0 +1,5 @@
+ - platform: xiaomi
+   name: GarageCam
+   host: '10.4.20.37'
+   model: 'xiaofang'
+   password: my_password_123

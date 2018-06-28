@@ -22,6 +22,17 @@ HA:
   entities:
     - group.ha_version_info
 
+Device Status:
+   view: yes
+   entities:
+   #  - group.devices
+   #  - group.computer_shutdown__restart
+   #  - group.network_performance
+   #  - group.phone_status
+   #  - group.Synology_nas
+   #  - group.entertainment_center
+     - group.ups
+
 ####################################################
 #                                                  #
 #                    GROUPS                        #
@@ -67,3 +78,13 @@ ha_version_info:
  entities:
     - sensor.installed_version
     - sensor.latest_version
+
+UPS:
+ control: hidden
+ entities:
+    - sensor.upsstate
+    - sensor.approxwattage
+    - sensor.ups_input_voltage
+    - sensor.ups_battery_runtime
+    - sensor.ups_battery_charge
+    - sensor.ups_load

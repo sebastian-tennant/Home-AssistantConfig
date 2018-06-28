@@ -4,3 +4,5 @@
  - platform: braviatv
    host: 10.4.20.38
 
+ - platform: sonos
+   host: 10.4.20.33

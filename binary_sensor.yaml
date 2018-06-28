@@ -1,0 +1,13 @@
+#https://home-assistant.io/components/binary_sensor/
+
+####################################################
+#                                                  #
+#                  PING                            #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/binary_sensor.ping/
+
+  - platform: ping
+    host: 10.4.20.10
+    name: Synology

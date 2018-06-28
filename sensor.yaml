@@ -18,6 +18,13 @@
    accept_errors: true
    unit_of_measurement: '°C'
 
+####################################################
+#                                                  #
+#                    UPS DATA                      #
+#          Connects to NUT on Synology             #
+#                                                  # 
+####################################################
+
  - platform: nut
    name: UPS
    host: 10.4.20.10
@@ -25,9 +32,21 @@
    password: secret
    resources:
       - ups.load
-      - ups.realpower.nominal
       - input.voltage
       - battery.runtime
+      - battery.voltage
+      - battery.charge
+
+#https://home-assistant.io/components/sensor.template/
+ - platform: template
+   sensors:
+     approxwattage:
+       unit_of_measurement: 'W'
+       value_template: '{{ states("sensor.ups_load") | float /100*900 }}'
+
+     upsstate:
+       value_template: "{%if states.sensor.ups_load.attributes.state == 'Online' %}Online{% elif states.sensor.ups_load.attributes.state == 'Forced Shutdown Online' %}Forced Shutdown Online{% elif states.sensor.ups_load.attributes.state == 'Online Battery Charging' %}Online Battery Charging{% elif states.sensor.ups_load.attributes.state == 'unknown' %}Power Outage{% endif %}"
+
 
 ####################################################
 #                                                  #

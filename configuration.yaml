@@ -77,6 +77,8 @@ sensor: !include sensor.yaml
 media_player: !include media_player.yaml
 switch: !include switch.yaml
 automation: !include_dir_merge_list automation/
+binary_sensor: !include binary_sensor.yaml
+camera: !include camera.yaml
 
 #Enable iOS component
 ios:
