@@ -1,0 +1,16 @@
+#########################################################
+#                                                       #
+#       Turn NUC on when Sony TV is turned on           #
+#                                                       #
+#########################################################
+
+  - alias: "Turn NUC on"
+    trigger:
+      platform: state
+      entity_id: media_player.sony_bravia_tv
+      from: 'off'
+      to: 'on'
+    action:
+      service: media_player.turn_on
+      data:
+        entity_id: media_player.sony_bravia_tv

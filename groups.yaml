@@ -15,23 +15,39 @@ default_view:
     - group.living_room
     - group.garage
     - group.outside
-
+Seb Office:
+  view: yes
+  name: Seb Office
+#  icon: mdi:home
+  entities:
+    - group.sebastian_office
+Lounge:
+  view: yes
+  name: Lounge
+#  icon: mdi:home
+  entities:
+    - group.living_room
+Bedroom:
+  view: yes
+  name: Bedroom
+#  icon: mdi:home
+  entities:
+    - group.master_bedroom
 HA:
   view: yes
 #  icon: mdi:home-assistant
   entities:
     - group.ha_version_info
-
 Device Status:
    view: yes
    entities:
-   #  - group.devices
-   #  - group.computer_shutdown__restart
-   #  - group.network_performance
-   #  - group.phone_status
-   #  - group.Synology_nas
-   #  - group.entertainment_center
      - group.ups
+     - group.server_status
+     - group.automation_status
+Automations:
+    view: yes
+    entities:
+     - group.maintenance_reminder_automations
 
 ####################################################
 #                                                  #
@@ -44,9 +60,10 @@ living_room:
   control: hidden
   entities:
     - light.tvled
+    - light.yeelight_rgb_34ce0084961b
     - media_player.unnamed_room
     - media_player.lounge
-
+    - media_player.sony_bravia_tv
 sebastian_office:
   name: Sebastian's Office
   control: hidden
@@ -54,13 +71,17 @@ sebastian_office:
     - light.studyled
     - switch.fluxer
     - sensor.office
-
 garage:
   name: Garage
   control: hidden
   entities:
     - sensor.garage
-
+    - camera.garagecam
+master_bedroom:
+  name: Bedroom
+  control: hidden
+  entities:
+    - media_player.master_bedroom_tv
 outside:
   name: Outside
   control: hidden
@@ -68,7 +89,6 @@ outside:
     - sensor.bom_adelaide_cbd_air_temp_c
     - sun.sun
     - sensor.moon
-
 ####################################################
 #                   SENSORS                        #
 ####################################################
@@ -78,7 +98,6 @@ ha_version_info:
  entities:
     - sensor.installed_version
     - sensor.latest_version
-
 UPS:
  control: hidden
  entities:
@@ -88,3 +107,31 @@ UPS:
     - sensor.ups_battery_runtime
     - sensor.ups_battery_charge
     - sensor.ups_load
+####################################################
+#                   Pings                          #
+#          (are these devices on?)                 #
+####################################################
+server_status:
+ name: Server Status
+ entities:
+    - binary_sensor.synology
+    - binary_sensor.edge_router
+    - binary_sensor.esx
+    - binary_sensor.openvpn
+    - binary_sensor.unifi_controller
+automation_status:
+ name: Automation Status
+ entities:
+    - binary_sensor.ir_blaster
+    - binary_sensor.sonos_living_room
+    - binary_sensor.yeelightstudy
+    - binary_sensor.yeelighttv
+    - binary_sensor.unifi_controller
+####################################################
+#                  AUTOMATIONS                     #
+####################################################
+Maintenance Reminder Automations:
+  control: hidden
+  entities:
+      - automation.bin_day_reminder
+      - automation.feed_the_cat_reminder

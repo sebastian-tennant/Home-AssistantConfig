@@ -10,9 +10,7 @@
     brightness: 5
     disable_brightness_adjust: True
     mode: rgb
-
-#  - platform: broadlink
-#    host: 192.168.2.133
-#    mac: '34:ea:34:8a:38:55'
-#    timeout: 15
-#    switches:
+  - platform: broadlink
+    host: 10.4.20.40
+    mac: '34:ea:34:8a:38:55'
+    timeout: 15

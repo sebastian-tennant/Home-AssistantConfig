@@ -65,3 +65,35 @@
    name: Latest Version
    value_template: "{{ value_json.info.version }}"
    scan_interval: 3600
+####################################################
+#                                                  #
+#                     SYNOLOGY                     #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/sensor.synologydsm/
+ - platform: synologydsm
+   host: 10.4.20.10
+   port: 5000
+   username: !secret syno_user
+   password: !secret syno_pass
+   monitored_conditions:
+      - cpu_total_load
+      - memory_real_usage
+      - network_up
+      - network_down
+      - disk_smart_status
+      - disk_temp
+      - volume_percentage_used
+
+####################################################
+#                                                  #
+#               CERTIFICATE EXPIRY                 #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/sensor.cert_expiry/
+ - platform: cert_expiry
+   host: !secret host
+   port: 8443
+   name: Lets Encrypt Expiration

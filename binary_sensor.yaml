@@ -8,6 +8,35 @@
 
 #https://home-assistant.io/components/binary_sensor.ping/
 
+#Servers
   - platform: ping
     host: 10.4.20.10
     name: Synology
+  - platform: ping
+    host: 10.4.20.12
+    name: OpenVPN
+  - platform: ping
+    host: 10.4.20.29
+    name: UniFi Controller
+  - platform: ping
+    host: 10.4.20.254
+    name: EdgeRouter
+  - platform: ping
+    host: 10.4.20.11
+    name: ESX  
+#Automations
+  - platform: ping
+    host: 10.4.20.31
+    name: Yeelight-Study
+  - platform: ping
+    host: 10.4.20.32
+    name: Yeelight-TV
+  - platform: ping
+    host: 10.4.20.33
+    name: Sonos Living Room
+  - platform: ping
+    host: 10.4.20.40
+    name: IR Blaster
+  - platform: ping
+    host: 10.4.20.41
+    name: Yeelight-LoungeLamp

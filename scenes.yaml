@@ -1,0 +1,8 @@
+  - name: Movies
+    entities:
+     light.yeelight_strip_34ce0087ea84:
+       state: on
+       brightness: 100
+     media_player.sony_bravia_tv:
+       state: on
+       source: HDMI 1/MHL

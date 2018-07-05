@@ -1,5 +1,4 @@
- - platform: xiaomi
-   name: GarageCam
-   host: '10.4.20.37'
-   model: 'xiaofang'
-   password: my_password_123
+  - platform: synology
+    url: 10.4.20.10
+    username: !secret syno_user
+    password: !secret syno_pass

@@ -79,6 +79,23 @@ switch: !include switch.yaml
 automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
+scene: !include scenes.yaml
 
 #Enable iOS component
 ios:
+
+#Enable Dark Sky
+weather:
+  - platform: darksky
+    api_key: !secret darkskyapi
+#https://home-assistant.io/components/recorder/
+recorder:
+  purge_interval: 1
+  purge_keep_days: 3
+
+#https://home-assistant.io/components/logger/
+logger:
+  default: error
+  logs:
+    homeassistant.components.sensor.template: critical
+    homeassistant.components.cover: critical
