@@ -40,3 +40,23 @@
   - platform: ping
     host: 10.4.20.41
     name: Yeelight-LoungeLamp
+#Various Devices
+  - platform: ping
+    host: 10.4.20.35
+    name: Pi-SebOffice
+  - platform: ping
+    host: 10.4.20.34
+    name: Pi-Garage
+  - platform: ping
+    host: 10.4.20.37
+    name: GarageCam
+  - platform: ping
+    host: 10.4.20.249
+    name: WirelessBridge
+  - platform: ping
+    host: 10.4.20.252
+    name: Lounge-Switch
+#Computers
+  - platform: ping
+    host: 10.4.20.140
+    name: Seb-GamingPC

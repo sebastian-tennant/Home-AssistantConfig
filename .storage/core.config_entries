@@ -1,0 +1,24 @@
+{
+    "data": {
+        "entries": [
+            {
+                "data": {},
+                "domain": "cast",
+                "entry_id": "3b4e9a1aff024887a14a16ba6147e180",
+                "source": "discovery",
+                "title": "Google Cast",
+                "version": 1
+            },
+            {
+                "data": {},
+                "domain": "sonos",
+                "entry_id": "21a37f6af3c14154b25bfcdb0163cf77",
+                "source": "discovery",
+                "title": "Sonos",
+                "version": 1
+            }
+        ]
+    },
+    "key": "core.config_entries",
+    "version": 1
+}

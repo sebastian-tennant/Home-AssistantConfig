@@ -1,8 +1,8 @@
  - platform: kodi
    host: 10.4.20.39
 
- - platform: braviatv
-   host: 10.4.20.38
+# - platform: braviatv
+#   host: 10.4.20.38
 
  - platform: sonos
    host: 10.4.20.33

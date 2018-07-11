@@ -14,9 +14,6 @@ homeassistant:
   time_zone: !secret time_zone
   customize: !include_dir_merge_named customize/
 
-# Show links to resources in log and frontend
-#introduction:
-
 # Enables the frontend
 frontend:
 
@@ -24,48 +21,21 @@ frontend:
 config:
 
 http:
-  # Uncomment this to add a password (recommended!)
    api_password: !secret api_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
    base_url: !secret base_url
-   # Cloudflare self signed certs
+   # Lets Encrypt certs
    ssl_certificate: !secret ssl_certificate
    ssl_key: !secret ssl_key
    #Run on specified port
    server_port: !secret server_port
 
-# Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
-
-# Discover some devices automatically
 discovery:
-
-# Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
-
-# Enables support for tracking state changes over time
 history:
-
-# View all events in a logbook
 logbook:
-
-# Track the sun
 sun:
-
-#Enable WOL
 wake_on_lan:
-
-# Weather prediction
-#sensor:
-#  - platform: yr
-
-# Text to speech
 tts:
   - platform: google
 
@@ -80,10 +50,17 @@ automation: !include_dir_merge_list automation/
 binary_sensor: !include binary_sensor.yaml
 camera: !include camera.yaml
 scene: !include scenes.yaml
+input_boolean: !include input_boolean.yaml
 
 #Enable iOS component
 ios:
 
+#Enable HomeKit to use Siri
+homekit:
+  filter:
+    exclude_domains:
+      - binary_sensor
+      - automation
 #Enable Dark Sky
 weather:
   - platform: darksky

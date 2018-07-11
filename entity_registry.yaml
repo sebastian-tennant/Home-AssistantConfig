@@ -23,3 +23,13 @@ sensor.sebiphone_battery_level:
   name:
   platform: ios
   unique_id: level_Seb-iphone8
+sensor.sebastianipad_battery_state:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: state_sebastianipad
+sensor.sebastianipad_battery_level:
+  config_entry_id:
+  name:
+  platform: ios
+  unique_id: level_sebastianipad

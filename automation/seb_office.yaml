@@ -1,0 +1,46 @@
+#########################################################
+#                                                       #
+#                     Light f.lux                       #
+#                                                       #
+#########################################################
+  - alias: seb_office_lights_flux_on
+    trigger:
+    - platform: state
+      entity_id: input_boolean.seb_office_lights_flux
+      from: 'off'
+      to: 'on'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.seb_office_flux_on
+  - alias: seb_office_lights_flux_off
+    trigger:
+      platform: state
+      entity_id: input_boolean.seb_office_lights_flux
+      from: 'on'
+      to: 'off'
+    action:
+      service: scene.turn_on
+      entity_id: scene.seb_office_flux_off
+#########################################################
+#                                                       #
+#              Change lights to blue                    #
+#                                                       #
+#########################################################
+  - alias: seb_office_lights_blue_on
+    trigger:
+    - platform: state
+      entity_id: input_boolean.seb_office_lights_blue
+      from: 'off'
+      to: 'on'
+    action:
+    - service: scene.turn_on
+      entity_id: scene.seb_office_blue_on
+  - alias: seb_office_lights_blue_off
+    trigger:
+      platform: state
+      entity_id: input_boolean.seb_office_lights_blue
+      from: 'on'
+      to: 'off'
+    action:
+      service: scene.turn_on
+      entity_id: scene.seb_office_blue_off

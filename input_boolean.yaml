@@ -1,0 +1,6 @@
+ seb_office_lights_flux:
+   name: Flux lights
+   icon: mdi:mdi:light
+ seb_office_lights_blue:
+   name: Blue lights
+   icon: mdi:mdi:light

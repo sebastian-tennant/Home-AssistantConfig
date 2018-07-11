@@ -1,4 +1,6 @@
-  - platform: synology
-    url: 10.4.20.10
-    username: !secret syno_user
-    password: !secret syno_pass
+ - platform: synology
+   url: 10.4.20.10
+   username: !secret syno_user
+   password: !secret syno_pass
+   verify_ssl: False
+   timeout: 15

@@ -1,8 +1,24 @@
-  - name: Movies
+### Seb Office Scenes ###
+  - name: seb_office_flux_on
     entities:
-     light.yeelight_strip_34ce0087ea84:
+     light.studyled:
        state: on
-       brightness: 100
-     media_player.sony_bravia_tv:
+       brightness: 10
+     switch.fluxer:
        state: on
-       source: HDMI 1/MHL
+  - name: seb_office_flux_off
+    entities:
+     light.studyled:
+       state: off
+     switch.fluxer:
+       state: off
+  - name: seb_office_blue_on
+    entities:
+     light.studyled:
+       state: on
+       brightness: 10
+       rgb_color: [71,71,255]
+  - name: seb_office_blue_off
+    entities:
+     light.studyled:
+       state: off

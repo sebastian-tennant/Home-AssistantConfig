@@ -9,10 +9,8 @@
 default_view:
   view: yes
   name: Home
-#  icon: mdi:home
+  #icon: mdi:home
   entities:
-    - group.sebastian_office
-    - group.living_room
     - group.garage
     - group.outside
 Seb Office:
@@ -20,30 +18,31 @@ Seb Office:
   name: Seb Office
 #  icon: mdi:home
   entities:
-    - group.sebastian_office
+    - group.sebastian_office_lights
+    - group.sebastian_office_environment
+    - group.sebastian_office_devices
 Lounge:
   view: yes
   name: Lounge
 #  icon: mdi:home
   entities:
-    - group.living_room
+    - group.living_room_lights
+    - group.living_room_media
+    - group.living_room_sonos
 Bedroom:
   view: yes
   name: Bedroom
 #  icon: mdi:home
   entities:
     - group.master_bedroom
-HA:
-  view: yes
-#  icon: mdi:home-assistant
-  entities:
-    - group.ha_version_info
 Device Status:
    view: yes
    entities:
      - group.ups
      - group.server_status
+     - group.synology
      - group.automation_status
+     - group.ha_version_info
 Automations:
     view: yes
     entities:
@@ -55,22 +54,44 @@ Automations:
 #                                                  #
 ####################################################
 
-living_room:
-  name: Living Room
+living_room_lights:
+  name: Lights
   control: hidden
   entities:
     - light.tvled
     - light.yeelight_rgb_34ce0084961b
-    - media_player.unnamed_room
+living_room_media:
+  name: Media Players
+  control: hidden
+  entities:
     - media_player.lounge
     - media_player.sony_bravia_tv
-sebastian_office:
-  name: Sebastian's Office
+living_room_sonos:
+  name: Sonos
+  control: hidden
+  entities:
+    - media_player.lounge
+    - media_player.sony_bravia_tv
+sebastian_office_lights:
+  name: Lights
   control: hidden
   entities:
     - light.studyled
     - switch.fluxer
+    - input_boolean.seb_office_lights_flux
+    - input_boolean.seb_office_lights_blue
+sebastian_office_environment:
+  name: Environment
+  control: hidden
+  entities:
     - sensor.office
+sebastian_office_devices:
+  name: Devices Status
+  control: hidden
+  entities:
+    - binary_sensor.edgerouter
+    - binary_sensor.yeelightstudy
+    - binary_sensor.sebgamingpc
 garage:
   name: Garage
   control: hidden
@@ -104,9 +125,14 @@ UPS:
     - sensor.upsstate
     - sensor.approxwattage
     - sensor.ups_input_voltage
-    - sensor.ups_battery_runtime
     - sensor.ups_battery_charge
     - sensor.ups_load
+Synology:
+ control: hidden
+ entities:
+    - sensor.volume_used_volume_1
+    - sensor.volume_used_volume_3
+
 ####################################################
 #                   Pings                          #
 #          (are these devices on?)                 #
@@ -115,7 +141,7 @@ server_status:
  name: Server Status
  entities:
     - binary_sensor.synology
-    - binary_sensor.edge_router
+    - binary_sensor.edgerouter
     - binary_sensor.esx
     - binary_sensor.openvpn
     - binary_sensor.unifi_controller
@@ -126,12 +152,12 @@ automation_status:
     - binary_sensor.sonos_living_room
     - binary_sensor.yeelightstudy
     - binary_sensor.yeelighttv
-    - binary_sensor.unifi_controller
+    - binary_sensor.yeelightloungelamp
 ####################################################
 #                  AUTOMATIONS                     #
 ####################################################
-Maintenance Reminder Automations:
+Reminder Automations:
   control: hidden
   entities:
-      - automation.bin_day_reminder
-      - automation.feed_the_cat_reminder
+    - automation.bin_day_reminder
+    - automation.feed_the_cat_reminder

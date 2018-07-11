@@ -33,7 +33,6 @@
    resources:
       - ups.load
       - input.voltage
-      - battery.runtime
       - battery.voltage
       - battery.charge
 
@@ -78,12 +77,6 @@
    username: !secret syno_user
    password: !secret syno_pass
    monitored_conditions:
-      - cpu_total_load
-      - memory_real_usage
-      - network_up
-      - network_down
-      - disk_smart_status
-      - disk_temp
       - volume_percentage_used
 
 ####################################################
@@ -93,7 +86,7 @@
 ####################################################
 
 #https://home-assistant.io/components/sensor.cert_expiry/
- - platform: cert_expiry
-   host: !secret host
-   port: 8443
-   name: Lets Encrypt Expiration
+# - platform: cert_expiry
+#   host: !secret host
+#   port: 8443
+#   name: Lets Encrypt Expiration
